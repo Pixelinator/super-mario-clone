@@ -10,7 +10,7 @@ const config = require("./config");
 const menu = require("./menu");
 
 unhandled();
-debug();
+// debug();
 contextMenu();
 
 // Note: Must match `build.appId` in package.json
@@ -34,8 +34,9 @@ const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.name,
 		show: false,
-		width: 640,
-		height: 640
+		frame: true,
+		width: 420,
+		height: 300
 	});
 
 	win.on("ready-to-show", () => {
