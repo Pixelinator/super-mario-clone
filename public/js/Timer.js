@@ -4,13 +4,13 @@ export default class Timer {
 		let lastTime = 0;
 
 		this.updateProxy = time => {
-			accumulatedTime = (time - lastTime) / 1000;
+			accumulatedTime += (time - lastTime) / 1000;
 
 			while (accumulatedTime > deltaTime) {
 				this.update(deltaTime);
 				accumulatedTime -= deltaTime;
 			}
-			requestAnimationFrame(this.updateProxy);
+
 			lastTime = time;
 			this.enqueue();
 		};
