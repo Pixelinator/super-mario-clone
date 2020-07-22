@@ -10,7 +10,7 @@ const config = require("./config");
 const menu = require("./menu");
 
 unhandled();
-debug();
+// debug();
 contextMenu();
 
 // Note: Must match `build.appId` in package.json
