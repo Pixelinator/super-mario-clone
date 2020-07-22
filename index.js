@@ -35,8 +35,8 @@ const createMainWindow = async () => {
 		title: app.name,
 		show: false,
 		frame: true,
-		width: 420,
-		height: 300
+		width: 840,
+		height: 600
 	});
 
 	win.on("ready-to-show", () => {
