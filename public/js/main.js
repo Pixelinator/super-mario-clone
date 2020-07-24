@@ -18,10 +18,10 @@ Promise.all([createMario(), loadLevel("1-1")]).then(([mario, level]) => {
 	input.listenTo(window);
 	setupMouseControl(canvas, mario, camera);
 
-	level.comp.layers.push(
-		createCollisionLayer(level),
-		createCameraLayer(camera)
-	);
+	// level.comp.layers.push(
+	// 	createCollisionLayer(level),
+	// 	createCameraLayer(camera)
+	// );
 
 	const timer = new Timer(1 / 60);
 	timer.update = function update(deltaTime) {
