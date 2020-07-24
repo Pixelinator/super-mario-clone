@@ -1,5 +1,6 @@
 import Camera from "./Camera.js";
 import Timer from "./Timer.js";
+
 import { setupKeyboard } from "./input.js";
 import { setupMouseControl } from "./debug.js";
 import { loadLevel } from "./loaders.js";
@@ -15,7 +16,6 @@ Promise.all([createMario(), loadLevel("1-1")]).then(([mario, level]) => {
 	level.entities.add(mario);
 	const input = setupKeyboard(mario);
 	input.listenTo(window);
-
 	setupMouseControl(canvas, mario, camera);
 
 	level.comp.layers.push(
@@ -28,6 +28,5 @@ Promise.all([createMario(), loadLevel("1-1")]).then(([mario, level]) => {
 		level.update(deltaTime);
 		level.comp.draw(context, camera);
 	};
-
 	timer.start();
 });
