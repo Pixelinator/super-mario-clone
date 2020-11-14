@@ -2,6 +2,10 @@
 
 > The best app ever
 
+any `loadFoo()` is async
+
+any `createFoo()` is sync
+
 ## Install
 
 _macOS 10.10+, Linux, and Windows 7+ are supported (64-bit only)._
