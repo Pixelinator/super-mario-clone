@@ -14,14 +14,14 @@ export class Trait {
 	}
 
 	obstruct() {}
-
-	update() {
-		console.warn("Unhandled update call in Trait");
-	}
+	collides(us, them) {}
+	update() {}
 }
 
 export default class Entity {
 	constructor() {
+		this.canCollide = true;
+
 		this.pos = new Vec2(0, 0);
 		this.vel = new Vec2(0, 0);
 		this.size = new Vec2(0, 0);
@@ -37,15 +37,23 @@ export default class Entity {
 		this[trait.NAME] = trait;
 	}
 
+	collides(candidate) {
+		this.traits.forEach(trait => {
+			trait.collides(this, candidate);
+		});
+	}
+
 	obstruct(side) {
 		this.traits.forEach(trait => {
 			trait.obstruct(this, side);
 		});
 	}
 
-	update(deltaTime) {
+	draw() {}
+
+	update(deltaTime, level) {
 		this.traits.forEach(trait => {
-			trait.update(this, deltaTime);
+			trait.update(this, deltaTime, level);
 		});
 
 		this.lifetime += deltaTime;
