@@ -13,4 +13,13 @@ body {
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	text-rendering: optimizeLegibility;
 	font-feature-settings: "liga", "clig", "kern";
+	background: #000000;
+	margin: 0;
+}
+
+#screen {
+	display: block;
+	image-rendering: pixelated;
+	height: 100vh;
+	margin: auto;
 }
